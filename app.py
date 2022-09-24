@@ -126,7 +126,7 @@ def hostcheck():
     visitor_checkins = vrecord.__dict__['checkin']
     host_send_email(visitor_names, visitor_emails, visitor_phones, visitor_checkins, host_email)
     sms_mes = "Name:" + " " + visitor_names + "\nEmail:" + visitor_emails + "\nPhone:" + visitor_phones + "\nCheckin:" + visitor_checkins
-    sendSMS(message=sms_mes)
+#     sendSMS(message=sms_mes)
     return render_template("hostcheck.html")
 
 
