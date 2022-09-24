@@ -3,16 +3,16 @@ import time
 import os
 from flask import Flask, render_template, redirect, url_for, request, flash
 from flask_sqlalchemy import SQLAlchemy
-from twilio.rest import Client
+# from twilio.rest import Client
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SECRET_KEY'] = os.urandom(20)
 db = SQLAlchemy(app)
-TWILIO_ACCOUNT_SID = 'ACaf7d96693d0ceb60b67bcfd752835c6d'
-TWILIO_AUTH_TOKEN = '39520702d4b786b0a42eee4af7b33af0'
-account_sid = TWILIO_ACCOUNT_SID
-auth_token = TWILIO_AUTH_TOKEN
+# TWILIO_ACCOUNT_SID = 'ACaf7d96693d0ceb60b67bcfd752835c6d'
+# TWILIO_AUTH_TOKEN = '39520702d4b786b0a42eee4af7b33af0'
+# account_sid = TWILIO_ACCOUNT_SID
+# auth_token = TWILIO_AUTH_TOKEN
 MY_EMAIL = 'kodiugos@gmail.com'
 PWD = 'llhytkakbfhnikci'
 
@@ -70,15 +70,15 @@ def visitor_send_email(visitor_name, visitor_email, visitor_phone, visitor_check
         )
 
 
-def sendSMS(message):
-    client = Client(account_sid, auth_token)
-    message = client.messages \
-        .create(
-        body=f'{message}',
-        from_='+13253996972',
-        to='+234 810 667 1579'
-    )
-    print(message.status)
+# def sendSMS(message):
+#     client = Client(account_sid, auth_token)
+#     message = client.messages \
+#         .create(
+#         body=f'{message}',
+#         from_='+13253996972',
+#         to='+234 810 667 1579'
+#     )
+#     print(message.status)
 
 
 @app.route("/")
